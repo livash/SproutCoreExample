@@ -6,6 +6,11 @@ TodosTwo.ReadyState = SC.State.extend({
 
   exitState: function() {
     TodosTwo.getPath('mainPage.mainPane').remove();
+  },
+
+  proveIt: function(someParam) {
+    console.log('Prove it has been tickled');
+    alert(someParam);
   }
 
 });
