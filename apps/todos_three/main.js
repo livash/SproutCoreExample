@@ -12,10 +12,7 @@
 // See comments for some pointers on what to do next.
 //
 TodosThree.main = function main() {
-  var statechart = TodosThree.statechart;
-
-  SC.RootResponder.responder.set('defaultResponder', statechart);
-  statechart.initStatechart();
+  TodosThree.statechart.initStatechart();
 };
 
 
