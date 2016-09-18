@@ -1,5 +1,4 @@
-TodosThree.ReadyState = SC.State.extend({ 
-  
+TodosThree.ReadyState = SC.State.extend({
   enterState: function() {
       if (SC.instanceOf(TodosThree.store.dataSource, SC.FixturesDataSource)) {
         TodosThree.todosController.set('content',

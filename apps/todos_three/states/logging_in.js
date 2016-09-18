@@ -1,4 +1,4 @@
-TodosThree.LOGGING_IN = SC.State.design({             
+TodosThree.LOGGING_IN = SC.State.design({
   initialSubstate: "SHOWING_LOGIN",
 
   SHOWING_LOGIN: SC.State.design({
