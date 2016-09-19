@@ -2,7 +2,7 @@ TodosThree.SHOWING_DESTROY_CONFIRMATION = SC.State.design({
   _panel: null,
 
   enterState: function() {
-    var displayDescription = "Are you sure that you wish to clear the following tasks?<br /><br />";
+    var displayDescription = "Are you sure you wish to clear the following tasks?";
     var completedTodos = TodosThree.completedTodosController;
 
     displayDescription += "<ul>";
@@ -11,21 +11,17 @@ TodosThree.SHOWING_DESTROY_CONFIRMATION = SC.State.design({
 
     this._panel = SC.AlertPane.warn({
       layout: { centerX: 0, top: 80, width: 380, bottom: 80 },
-
       defaultResponder: TodosThree.statechart,
-
       message: "Clear Completed Todos",
       displayDescription: displayDescription,
-
       buttons: [
-        { title: 'Clear', action: 'confirm' },
-        { title: 'Cancel', action: 'cancel' }
+        { title: "Clear", action: "confirm" },
+        { title: "Cancel", action: "cancel" }
       ]
     });
   },
 
   exitState: function() {
-    // No need to do anything here, the SC.AlertPane will remove itself.
   },
 
   confirm: function() {
