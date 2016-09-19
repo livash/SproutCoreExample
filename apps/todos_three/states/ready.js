@@ -1,13 +1,13 @@
-TodosThree.ReadyState = SC.State.extend({
+TodosThree.READY = SC.State.design({
   enterState: function() {
-      if (SC.instanceOf(TodosThree.store.dataSource, SC.FixturesDataSource)) {
-        TodosThree.todosController.set('content',
-          TodosThree.store.find(SC.Query.local(TodosThree.Todo, { orderBy: 'timestamp DESC' })));
-        TodosThree.completedTodosController.set('content',
-          TodosThree.store.find(SC.Query.local(TodosThree.Todo, 'isCompleted = true')));
-      } else {
-        this.gotoState('LOGGING_IN');
-      }
+    if (SC.instanceOf(TodosThree.store.dataSource, SC.FixturesDataSource)) {
+      TodosThree.todosController.set('content',
+        TodosThree.store.find(SC.Query.local(TodosThree.Todo, { orderBy: 'timestamp DESC' })));
+      TodosThree.completedTodosController.set('content',
+        TodosThree.store.find(SC.Query.local(TodosThree.Todo, 'isCompleted = true')))
+    } else {
+      this.gotoState('LOGGING_IN');
+    }
   },
 
   didLoad: function() {
@@ -17,8 +17,7 @@ TodosThree.ReadyState = SC.State.extend({
   }.stateObserves('TodosThree.todosController.status'),
 
   exitState: function() {
-    //TodosThree.getPath('mainPage.mainPane').remove();
+    // nothing yet
   }
-
 });
 
