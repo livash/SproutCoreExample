@@ -7,14 +7,14 @@ TodosThree.SHOWING_APP = SC.State.design({
   exitState: function() {
   },
 
-  addTodo: function (view) {
+  addTodo: function(view) {
     var todo = (view.get('value') || '').trim();
     if (todo !== '') {
       TodosThree.store.createRecord(TodosThree.Todo, {
         title: todo,
         timestamp: SC.DateTime.create()
       });
-      view.set('value', '');
+      view.set('value', ''); // erase the content of the input box
     }
   },
 
